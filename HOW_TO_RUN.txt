@@ -1,0 +1,106 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║             🎯 INVOICE HUB - HOW TO RUN EVERYTHING            ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────┐
+│ ⭐ THE EASIEST WAY (Recommended!)                           │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  1. Open the project folder in File Explorer               │
+│  2. Double-click:  START.bat                               │
+│  3. Wait 10 seconds                                        │
+│  4. Done! Browser opens automatically                      │
+│                                                             │
+│  What happens:                                              │
+│  ✓ Backend starts (port 8000)                              │
+│  ✓ Frontend starts (port 8080)                             │
+│  ✓ Email ingestion runs                                    │
+│  ✓ Browser opens automatically                             │
+│  ✓ Ready to use!                                           │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ 💻 ALTERNATIVE - Using Terminal (For Developers)           │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Step 1: Start both servers                                │
+│  ────────────────────────────────────────────────────────  │
+│  npm run start:all                                         │
+│                                                             │
+│  Step 2: In another terminal, trigger email ingestion     │
+│  ────────────────────────────────────────────────────────  │
+│  python trigger_ingestion.py                               │
+│                                                             │
+│  Step 3: Open browser                                      │
+│  ────────────────────────────────────────────────────────  │
+│  http://localhost:8080                                     │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ 📱 ACCESS THE APPLICATION                                   │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Frontend App:    http://localhost:8080                    │
+│  API Docs:        http://localhost:8000/docs               │
+│  Database:        localhost:5432/invoice                   │
+│                                                             │
+│  Login with:                                                │
+│    Username: reviewer                                       │
+│    Password: test123                                        │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ 🛑 STOPPING SERVERS                                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  If using START.bat:                                        │
+│    - Close the command windows, or                         │
+│    - Press Ctrl+C in each window                           │
+│                                                             │
+│  If using npm run start:all:                               │
+│    - Press Ctrl+C in the terminal                          │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ 📧 MANUALLY TRIGGER EMAIL INGESTION                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  After servers are running, open a terminal and run:       │
+│                                                             │
+│  python trigger_ingestion.py                               │
+│                                                             │
+│  This will:                                                 │
+│  ✓ Connect to Gmail                                        │
+│  ✓ Find unread invoice emails                              │
+│  ✓ Process with OCR                                        │
+│  ✓ Save to database                                        │
+│  ✓ New invoices appear in Review Queue                     │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ ⚙️  FIRST TIME SETUP                                        │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Make sure you've run once:                                │
+│                                                             │
+│  npm install                                               │
+│  npm install --save-dev concurrently                       │
+│                                                             │
+│  This installs all required packages.                      │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║  🎉 That's it! Double-click START.bat and you're good to go! ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+📚 For detailed docs, see: QUICKSTART.md or STARTUP_GUIDE.md
