@@ -46,8 +46,11 @@ A professional invoice management and processing system with role-based access c
 
 2. **Backend Setup**
    ```bash
+   # from project root
+   python -m venv venv
+   venv\Scripts\activate
+   pip install -r req.txt
    cd backend
-   pip install -r requirements.txt
    python main.py
    ```
 
@@ -84,6 +87,25 @@ invoice-hub/
 Once the backend is running, visit:
 - Swagger UI: `http://localhost:8000/docs`
 - ReDoc: `http://localhost:8000/redoc`
+
+## Backend Python Dependencies
+
+This project uses `req.txt` as the Python dependency lock file.
+
+Install backend dependencies:
+
+```bash
+# from project root
+venv\Scripts\activate
+pip install -r req.txt
+```
+
+If dependencies are changed, update `req.txt`:
+
+```bash
+venv\Scripts\activate
+pip freeze > req.txt
+```
 
 ## Contributing
 
@@ -149,6 +171,3 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-=======
-# Invoice-Analyzer
->>>>>>> ca980f6beaee7b16ef49e17e2f418fe5676565ea
